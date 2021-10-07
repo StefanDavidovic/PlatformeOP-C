@@ -1,0 +1,16 @@
+﻿<Window x:Class="SF_19_2019_POP2020.Windows.Changelog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SF_19_2019_POP2020.Windows"
+        mc:Ignorable="d"
+        Title="Changelog" Height="450" Width="800">
+    <Grid>
+        <Label Content="Changelog" HorizontalAlignment="Left" Margin="296,0,0,0" VerticalAlignment="Top" Height="70" Width="179" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sitan uvid šta sam odradio za kontrolnu tačku kao i bugove koje moram srediti.Odrađen je koliko toliko kompletan CRUD svih entiteta sa time da ću se više pozabaviti entitetima Pacijent i Lekar, pošto će oni imati posebne svoje prozore za svakog od njih"
+ VerticalAlignment="Top" Margin="10,70,0,0" Height="340" Width="774"/>
+
+
+    </Grid>
+</Window>

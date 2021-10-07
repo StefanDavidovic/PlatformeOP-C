@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA9351AA-CBD8-4A50-B25A-490DAB076FD4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SF_19_2019_POP2020</RootNamespace>
+    <AssemblyName>SF-19-2019-POP2020</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Aplikacija.cs" />
+    <Compile Include="HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Datoteke.cs" />
+    <Compile Include="Models\EStatus.cs" />
+    <Compile Include="Models\EStatusTermina.cs" />
+    <Compile Include="Models\Pacijent.cs" />
+    <Compile Include="Models\Terapija.cs" />
+    <Compile Include="Models\Termin.cs" />
+    <Compile Include="MyExceptions\UserNotFoundException.cs" />
+    <Compile Include="Services\AdresaService.cs" />
+    <Compile Include="Services\DomZdravljaService.cs" />
+    <Compile Include="Services\IDomZdravljaServis.cs" />
+    <Compile Include="Services\IPacijentService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\ITerapijaService.cs" />
+    <Compile Include="Services\ITerminService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\LekariServis.cs" />
+    <Compile Include="Services\PacijentService.cs" />
+    <Compile Include="Services\TerapijaService.cs" />
+    <Compile Include="Services\TerminiService.cs" />
+    <Compile Include="Validations\EmailValidation.cs" />
+    <Compile Include="Windows\Changelog.xaml.cs">
+      <DependentUpon>Changelog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DoktoriProzori\DoktorAddEdit.xaml.cs">
+      <DependentUpon>DoktorAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DoktoriProzori\DoktoriWindow.xaml.cs">
+      <DependentUpon>DoktoriWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DoktoriProzori\LekariPick.xaml.cs">
+      <DependentUpon>LekariPick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DomZdravljaProzori\DomZdravljaPick.xaml.cs">
+      <DependentUpon>DomZdravljaPick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DomZdravljaProzori\IzabraniDomZdravlja.xaml.cs">
+      <DependentUpon>IzabraniDomZdravlja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DomZdravljaProzori\LekarTermini.xaml.cs">
+      <DependentUpon>LekarTermini.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdministratoriWindow.xaml.cs">
+      <DependentUpon>AdministratoriWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdresaProzori\AdresaEditAddDelete.xaml.cs">
+      <DependentUpon>AdresaEditAddDelete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdresaProzori\AdresaPick.xaml.cs">
+      <DependentUpon>AdresaPick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdresaProzori\AdreseWindow.xaml.cs">
+      <DependentUpon>AdreseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DomZdravljaProzori\DomoviZdravljaAddEdit.xaml.cs">
+      <DependentUpon>DomoviZdravljaAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DomZdravljaProzori\DomoviZdravljaWindow.xaml.cs">
+      <DependentUpon>DomoviZdravljaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LekariWindowProfil\LekarGlavna.xaml.cs">
+      <DependentUpon>LekarGlavna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LekariWindowProfil\LekariZakazivanje.xaml.cs">
+      <DependentUpon>LekariZakazivanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LekariWindowProfil\LekarZTerapija.xaml.cs">
+      <DependentUpon>LekarZTerapija.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LekariWindowProfil\TerapijeKodLekara.xaml.cs">
+      <DependentUpon>TerapijeKodLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LekariWindowProfil\TerminUdz.xaml.cs">
+      <DependentUpon>TerminUdz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NEPRIJAVLJENIWindow\DomZdravljaPrekoAdresePrikaz.xaml.cs">
+      <DependentUpon>DomZdravljaPrekoAdresePrikaz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NEPRIJAVLJENIWindow\Neregistrovani.xaml.cs">
+      <DependentUpon>Neregistrovani.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NEPRIJAVLJENIWindow\OdaberiDomZdravljaMesto.xaml.cs">
+      <DependentUpon>OdaberiDomZdravljaMesto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentiProzori\PacijentAddEdit.xaml.cs">
+      <DependentUpon>PacijentAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentiProzori\PacijentiPick.xaml.cs">
+      <DependentUpon>PacijentiPick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentiProzori\PacijentiWindow.xaml.cs">
+      <DependentUpon>PacijentiWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentWindowi\PacijentGlavna.xaml.cs">
+      <DependentUpon>PacijentGlavna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentWindowi\PacijentZakazivanjeTermina.xaml.cs">
+      <DependentUpon>PacijentZakazivanjeTermina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentWindowi\SlobodniTermini.xaml.cs">
+      <DependentUpon>SlobodniTermini.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PacijentWindowi\TerminiZaPacijenta.xaml.cs">
+      <DependentUpon>TerminiZaPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\DomZdravljaViaAdresa.xaml.cs">
+      <DependentUpon>DomZdravljaViaAdresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\LekaraViaDomZdravlja.xaml.cs">
+      <DependentUpon>LekaraViaDomZdravlja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\LekarViaAdresa.xaml.cs">
+      <DependentUpon>LekarViaAdresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\PacijentPoAdresi.xaml.cs">
+      <DependentUpon>PacijentPoAdresi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\PrikazLekaraAdresa.xaml.cs">
+      <DependentUpon>PrikazLekaraAdresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\PrikazLekaraDz.xaml.cs">
+      <DependentUpon>PrikazLekaraDz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\PrikazPacijentaAdresa.xaml.cs">
+      <DependentUpon>PrikazPacijentaAdresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\PrikazTerminaZaDz.xaml.cs">
+      <DependentUpon>PrikazTerminaZaDz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\TerapijaViaLekar.xaml.cs">
+      <DependentUpon>TerapijaViaLekar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\TerapijaViaLPrikaz.xaml.cs">
+      <DependentUpon>TerapijaViaLPrikaz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pretrage\TerminViaLekarPrikaz.xaml.cs">
+      <DependentUpon>TerminViaLekarPrikaz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegistracijaPacijent.xaml.cs">
+      <DependentUpon>RegistracijaPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerapijaProzori\TerapijaAddEdit.xaml.cs">
+      <DependentUpon>TerapijaAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerapijaProzori\TerapijaWindow.xaml.cs">
+      <DependentUpon>TerapijaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerminiWindow\PacijentZakazivajeTermina.xaml.cs">
+      <DependentUpon>PacijentZakazivajeTermina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerminiWindow\TerminiAddEdit.xaml.cs">
+      <DependentUpon>TerminiAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerminiWindow\TerminiKodLekaraPick.xaml.cs">
+      <DependentUpon>TerminiKodLekaraPick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TerminiWindow\TerminiWindow1.xaml.cs">
+      <DependentUpon>TerminiWindow1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Changelog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DoktoriProzori\DoktorAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DoktoriProzori\DoktoriWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DoktoriProzori\LekariPick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DomZdravljaProzori\DomZdravljaPick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DomZdravljaProzori\IzabraniDomZdravlja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DomZdravljaProzori\LekarTermini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdministratoriWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdresaProzori\AdresaEditAddDelete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdresaProzori\AdresaPick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdresaProzori\AdreseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DomZdravljaProzori\DomoviZdravljaAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DomZdravljaProzori\DomoviZdravljaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LekariWindowProfil\LekarGlavna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LekariWindowProfil\LekariZakazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LekariWindowProfil\LekarZTerapija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LekariWindowProfil\TerapijeKodLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LekariWindowProfil\TerminUdz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NEPRIJAVLJENIWindow\DomZdravljaPrekoAdresePrikaz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NEPRIJAVLJENIWindow\Neregistrovani.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NEPRIJAVLJENIWindow\OdaberiDomZdravljaMesto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentiProzori\PacijentAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentiProzori\PacijentiPick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentiProzori\PacijentiWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentWindowi\PacijentGlavna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentWindowi\PacijentZakazivanjeTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentWindowi\SlobodniTermini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PacijentWindowi\TerminiZaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\DomZdravljaViaAdresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\LekaraViaDomZdravlja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\LekarViaAdresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\PacijentPoAdresi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\PrikazLekaraAdresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\PrikazLekaraDz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\PrikazPacijentaAdresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\PrikazTerminaZaDz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\TerapijaViaLekar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\TerapijaViaLPrikaz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pretrage\TerminViaLekarPrikaz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegistracijaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerapijaProzori\TerapijaAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerapijaProzori\TerapijaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerminiWindow\PacijentZakazivajeTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerminiWindow\TerminiAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerminiWindow\TerminiKodLekaraPick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TerminiWindow\TerminiWindow1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Adresa.cs" />
+    <Compile Include="Models\DomZdravlja.cs" />
+    <Compile Include="Models\EPol.cs" />
+    <Compile Include="Models\ETipKorisnika.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Lekar.cs" />
+    <Compile Include="Models\Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

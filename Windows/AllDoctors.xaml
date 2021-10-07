@@ -1,0 +1,33 @@
+﻿<Window x:Class="SF15_2019_POP2020.Windows.AllDoctors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SF15_2019_POP2020.Windows"
+        mc:Ignorable="d"
+        Title="Lekari" Height="450" Width="800">  
+    <Grid>
+        <Menu Name="Menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="792">
+            <MenuItem Name="MILekari" Header="Lekari">
+                <MenuItem Name="MIDodajLekara" Header="Dodaj lekara" Click="MIDodajLekara_Click"/>
+                <MenuItem Name="MIIzmeniLekara" Header="Izmeni lekara" Click="MIIzmeniLekara_Click" />
+                <MenuItem Name="ObrisiLekaraMI" Header="Obrisi lekara" Click="ObrisiLekaraMI_Click" />
+                <Separator />
+                <MenuItem Name="MIProfilLekara" Header="Profil" />
+            </MenuItem>
+
+            <MenuItem Name="MIAdminii" Header="Administratori">
+                <MenuItem Name="MIDodajAdmina" Header="Dodaj admina" Click="MIDodajAdmina_Click"/>
+                <MenuItem Name="MIIzmeniAdmina" Header="Izmeni admina" Click="MIIzmeniAdmina_Click" />
+                <MenuItem Name="ObrisiAdminaMI" Header="Obrisi admina" Click="ObrisiAdminaMI_Click" />
+                <Separator />
+                <MenuItem Name="MIProfilAdmina" Header="Profil" />
+            </MenuItem>
+        
+        </Menu>
+        <DataGrid CanUserAddRows="False" Name="DGLekari" HorizontalAlignment="Left" 
+                  Height="371" Margin="10,38,0,0" VerticalAlignment="Top" Width="661"
+                  AutoGenerateColumns="True"
+                  AutoGeneratingColumn="DGLekari_AutoGeneratingColumn"/>
+    </Grid>
+</Window>

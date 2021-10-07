@@ -1,0 +1,5 @@
+mika;mika12;mika;1234;mika@gmail.com;1234;M;LEKAR;True
+pera;pera;pera;12;pera@mgmail.com;pera;Z;LEKAR;True
+laza;laza;lazic;1234;laza@gmail.com;1234;M;LEKAR;True
+zika;zika;zika;;zika@gmail.com;;M;LEKAR;True
+jelena;jelena123242;jelic;;jelena@gmail.com;;M;LEKAR;False

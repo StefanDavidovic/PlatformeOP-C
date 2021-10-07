@@ -1,0 +1,26 @@
+﻿<Window x:Class="SF_19_2019_POP2020.Windows.DoktoriProzori.LekariPick"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SF_19_2019_POP2020.Windows.DoktoriProzori"
+        mc:Ignorable="d"
+       Title="Lekari" Height="404" Width="466"  ResizeMode="NoResize" Background="#04c582">
+    <Border Background="#2e3137" CornerRadius="20" Margin="15">
+
+        <Grid>
+        <DataGrid AutoGeneratingColumn="DGL_AutoGeneratingColumn" AutoGenerateColumns="True" Margin="12,12,12,158" Name="dgLekari" IsReadOnly="True" />
+            <Button Background="#545d6a" Foreground="White" Content="Obriši" Height="39" HorizontalAlignment="Left" Margin="165,0,0,31" Name="btnDelete" VerticalAlignment="Bottom" Width="66" />
+            <Button Background="#545d6a" Foreground="White" Content="Zatvori" Height="39" HorizontalAlignment="Right" Margin="0,0,12,31" Name="btnClose" VerticalAlignment="Bottom" Width="102" Click="btnClose_Click" />
+            <Button Background="#545d6a" Foreground="White"   Content="Dodaj" Height="39" HorizontalAlignment="Left" Margin="12,0,0,31" Name="btnAdd" VerticalAlignment="Bottom" Width="66" />
+            <Button Background="#545d6a" Foreground="White" Content="Izmeni" Height="39" HorizontalAlignment="Left" Margin="84,0,0,31" Name="btnUpdate" VerticalAlignment="Bottom" Width="75" />
+            <Button Background="#545d6a" Foreground="White" Content="Preuzmi" Height="39" HorizontalAlignment="Left" Margin="237,0,0,31" Name="btnPick" VerticalAlignment="Bottom" Width="66" Click="btnPick_Click" />
+        <TextBox Name="TxtPretraga" HorizontalAlignment="Left" Height="27" Margin="31,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" KeyUp="TxtPretraga_KeyUp" Background="#FF709AD6"/>
+            <Button Background="#545d6a" Foreground="White" Content="Po adresi" Height="39" HorizontalAlignment="Left" Margin="351,0,0,84" Name="btnAdresa" VerticalAlignment="Bottom" Width="66" Click="btnAdresa_Click" />
+
+
+    </Grid>
+    </Border>
+
+</Window>
+

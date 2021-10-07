@@ -1,0 +1,30 @@
+﻿<Window x:Class="SF_19_2019_POP2020.Windows.LekariWindowProfil.LekarGlavna"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SF_19_2019_POP2020.Windows.LekariWindowProfil"
+        mc:Ignorable="d"
+        Title="LekarGlavna" Height="593.534" Width="996.552" Background="#04c582" ResizeMode="NoResize">
+    <Border Background="#2e3137" CornerRadius="20" Margin="15">
+        <Grid Margin="0,0,2,19">
+            <Label Content="TERAPIJE PACIJENATA" Foreground="White" HorizontalAlignment="Left" Margin="683,154,0,0" VerticalAlignment="Top" Height="52" Width="249" FontSize="24"/>
+
+            <DataGrid AutoGeneratingColumn="DGA_AutoGeneratingColumn"   AutoGenerateColumns="True" Margin="12,53,155,381" Name="dgLekar" IsReadOnly="True" FontSize="16"/>
+            <Button Background="#545d6a" Foreground="White"  Content="Izmeni" Height="39" HorizontalAlignment="Left" Margin="807,0,0,402" Name="btnUpdate" VerticalAlignment="Bottom" Width="75" Click="btnUpdate_Click" RenderTransformOrigin="0.4,1.025" FontSize="18" />
+            <Button Background="#545d6a" Foreground="White"  Content="Nadji Dom Zdravlja po Adresi" Height="39" HorizontalAlignment="Left" Margin="10,0,0,269" Name="btnInstitucija" VerticalAlignment="Bottom" Width="323" Click="btnInstitucija_Click" FontSize="22" />
+
+            <Button Background="#545d6a" Foreground="White"  Content="Nadji Termin po Domu Zdravlja" Height="39" HorizontalAlignment="Left" Margin="10,0,0,187" Name="btnDz" VerticalAlignment="Bottom" Width="299" Click="btnDz_Click" FontSize="18" />
+
+            <DataGrid AutoGeneratingColumn="DGL_AutoGeneratingColumn"  AutoGenerateColumns="True" Margin="348,206,10,44" Name="dgTerapije" IsReadOnly="True" FontSize="16"
+/>
+            <Button Background="#545d6a" Foreground="White"  Content="Dodaj Terapiju" Height="39" HorizontalAlignment="Left" Margin="796,0,0,0" Name="btnT" VerticalAlignment="Bottom" Width="141" Click="btnT_Click" RenderTransformOrigin="1.48,0.537" FontSize="16" />
+            <Button Background="#545d6a" Foreground="White"  Content="Termini" Height="39" HorizontalAlignment="Left" Margin="12,0,0,44" x:Name="btntermin_Copy" VerticalAlignment="Bottom" Width="116" Click="btnTermin_Click" FontSize="22" />
+            <Button Background="#545d6a" Foreground="White"  Content="Termin Po Lekaru" Height="39" HorizontalAlignment="Left" Margin="145,0,0,44" x:Name="btnterminLkear_Copy" VerticalAlignment="Bottom" Width="164" Click="btnTerminLekar_Click" FontSize="22" />
+
+            <Button Background="#545d6a" Foreground="White"  Content="Doktori" Height="39" HorizontalAlignment="Left" Margin="10,0,0,121" x:Name="btnDoktori_Copy1" VerticalAlignment="Bottom" Width="170" Click="btnDoktori_Click" FontSize="20" />
+            <Label Content="Informacije" Foreground="White" HorizontalAlignment="Left" Margin="12,1,0,0" VerticalAlignment="Top" Height="52" Width="249" FontSize="24"/>
+
+        </Grid>
+    </Border>
+</Window>
